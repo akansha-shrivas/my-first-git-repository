@@ -1,0 +1,302 @@
+-------------------------------------Branches--------------------------------------------
+
+$ git branch -->to know how many branch you have..highlighted is the current branch
+
+$ git branch bug123 -->to create branch...bug123 is branch name
+
+$ git checkout bug123 -->switch to branch....Switched to branch 'bug123'
+
+$ git commit -am "bug removed"
+
+$ git checkout master -->Switched to branch 'master'
+
+$ git merge bug123
+
+$ git branch -d bug123 -->Deleted branch bug123 (was ba4f676).
+-d -->discarding the branch even without merging
+-D -->forcefully delete the branch
+
+$ git checkout -b idea --> create and checkout a branch
+
+$ git branch
+* idea
+  master
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (idea)
+$ git commit -am "arrow added"
+[idea 2184464] arrow added
+ 2 files changed, 15 insertions(+), 3 deletions(-)
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (idea)
+$ git log --oneline
+2184464 arrow added
+ba4f676 bug removed
+df50c9b day2 cmds
+83b644d filecmd is modified
+d066cd9 File1 renamed to File1rename
+8f8c73a File1 renamed to File1rename
+9429b15 filetodelete is deleted coz...
+47c8d26 filetodelete is created
+450cf30 change 3 in file1 and decorate
+fa0dfd7 '.gitignore file is craeted and....'
+7033886 change2 in file1
+3949066 change in file
+2be1b4c New File1 is created
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (idea)
+$ git status
+On branch idea
+nothing to commit, working tree clean
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (idea)
+$ git checkout master
+Switched to branch 'master'
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (master)
+$ git log --oneline
+ba4f676 bug removed
+df50c9b day2 cmds
+83b644d filecmd is modified
+d066cd9 File1 renamed to File1rename
+8f8c73a File1 renamed to File1rename
+9429b15 filetodelete is deleted coz...
+47c8d26 filetodelete is created
+450cf30 change 3 in file1 and decorate
+fa0dfd7 '.gitignore file is craeted and....'
+7033886 change2 in file1
+3949066 change in file
+2be1b4c New File1 is created
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (master)
+$ git commit -am "dashed added"
+[master 6349353] dashed added
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (master)
+$ git log --oneline
+6349353 dashed added
+ba4f676 bug removed
+df50c9b day2 cmds
+83b644d filecmd is modified
+d066cd9 File1 renamed to File1rename
+8f8c73a File1 renamed to File1rename
+9429b15 filetodelete is deleted coz...
+47c8d26 filetodelete is created
+450cf30 change 3 in file1 and decorate
+fa0dfd7 '.gitignore file is craeted and....'
+7033886 change2 in file1
+3949066 change in file
+2be1b4c New File1 is created
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (master)
+$ git branch
+  idea
+* master
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (master)
+$ git merge idea
+Auto-merging File1rename.txt
+CONFLICT (content): Merge conflict in File1rename.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+$ git commit -am "added square bracket"
+
+------------------------------------------------------------------------------------------------
+less no. of commits then use "rebase" -->changing the base of the newely created branch
+
+$ git branch -D idea
+Deleted branch idea (was 2184464).
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (master)
+$ git branch
+* master
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (master)
+$ git checkout -b bug456
+M       Day2-GitCommands.txt
+Switched to a new branch 'bug456'
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (bug456)
+$ git branch
+* bug456
+  master
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (bug456)
+$ git commit -am "change 4 in file1"
+[bug456 4585996] change 4 in file1
+ 2 files changed, 6 insertions(+)
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (bug456)
+$ git status
+On branch bug456
+nothing to commit, working tree clean
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (bug456)
+$ git log --oneline
+4585996 change 4 in file1
+88eb68c command added
+b1f6960 added square bracket
+6349353 dashed added
+2184464 arrow added
+ba4f676 bug removed
+df50c9b day2 cmds
+83b644d filecmd is modified
+d066cd9 File1 renamed to File1rename
+8f8c73a File1 renamed to File1rename
+9429b15 filetodelete is deleted coz...
+47c8d26 filetodelete is created
+450cf30 change 3 in file1 and decorate
+fa0dfd7 '.gitignore file is craeted and....'
+7033886 change2 in file1
+3949066 change in file
+2be1b4c New File1 is created
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (bug456)
+$ git checkout master
+Switched to branch 'master'
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (master)
+$ git log --oneline
+88eb68c command added
+b1f6960 added square bracket
+6349353 dashed added
+2184464 arrow added
+ba4f676 bug removed
+df50c9b day2 cmds
+83b644d filecmd is modified
+d066cd9 File1 renamed to File1rename
+8f8c73a File1 renamed to File1rename
+9429b15 filetodelete is deleted coz...
+47c8d26 filetodelete is created
+450cf30 change 3 in file1 and decorate
+fa0dfd7 '.gitignore file is craeted and....'
+7033886 change2 in file1
+3949066 change in file
+2be1b4c New File1 is created
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (master)
+$ git add .
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (master)
+$ git commit -m "file2 is created"
+[master 5fe6be6] file2 is created
+ 1 file changed, 1 insertion(+)
+ create mode 100644 File2.txt
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (master)
+$ git log --oneline
+5fe6be6 file2 is created
+88eb68c command added
+b1f6960 added square bracket
+6349353 dashed added
+2184464 arrow added
+ba4f676 bug removed
+df50c9b day2 cmds
+83b644d filecmd is modified
+d066cd9 File1 renamed to File1rename
+8f8c73a File1 renamed to File1rename
+9429b15 filetodelete is deleted coz...
+47c8d26 filetodelete is created
+450cf30 change 3 in file1 and decorate
+fa0dfd7 '.gitignore file is craeted and....'
+7033886 change2 in file1
+3949066 change in file
+2be1b4c New File1 is created
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (master)
+$ git branch
+  bug456
+* master
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (master)
+$ git checkout bug456
+Switched to branch 'bug456'
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (bug456)
+$ git rebase master
+First, rewinding head to replay your work on top of it...
+Applying: change 4 in file1
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (bug456)
+$ git log --oneline
+43b1a48 change 4 in file1
+5fe6be6 file2 is created
+88eb68c command added
+b1f6960 added square bracket
+6349353 dashed added
+2184464 arrow added
+ba4f676 bug removed
+df50c9b day2 cmds
+83b644d filecmd is modified
+d066cd9 File1 renamed to File1rename
+8f8c73a File1 renamed to File1rename
+9429b15 filetodelete is deleted coz...
+47c8d26 filetodelete is created
+450cf30 change 3 in file1 and decorate
+fa0dfd7 '.gitignore file is craeted and....'
+7033886 change2 in file1
+3949066 change in file
+2be1b4c New File1 is created
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (bug456)
+$ git branch
+* bug456
+  master
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (bug456)
+$ git checkout master
+Switched to branch 'master'
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (master)
+$ git branch
+  bug456
+* master
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (master)
+$ git log --oneline
+5fe6be6 file2 is created
+88eb68c command added
+b1f6960 added square bracket
+6349353 dashed added
+2184464 arrow added
+ba4f676 bug removed
+df50c9b day2 cmds
+83b644d filecmd is modified
+d066cd9 File1 renamed to File1rename
+8f8c73a File1 renamed to File1rename
+9429b15 filetodelete is deleted coz...
+47c8d26 filetodelete is created
+450cf30 change 3 in file1 and decorate
+fa0dfd7 '.gitignore file is craeted and....'
+7033886 change2 in file1
+3949066 change in file
+2be1b4c New File1 is created
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (master)
+$ git merge bug456
+Updating 5fe6be6..43b1a48
+Fast-forward
+ Day2-GitCommands.txt | 4 ++++
+ File1rename.txt      | 2 ++
+ 2 files changed, 6 insertions(+)
+
+Administrator@JAVA MINGW64 /c/Akansha-GIT (master)
+$ git log --oneline
+43b1a48 change 4 in file1
+5fe6be6 file2 is created
+88eb68c command added
+b1f6960 added square bracket
+6349353 dashed added
+2184464 arrow added
+ba4f676 bug removed
+df50c9b day2 cmds
+83b644d filecmd is modified
+d066cd9 File1 renamed to File1rename
+8f8c73a File1 renamed to File1rename
+9429b15 filetodelete is deleted coz...
+47c8d26 filetodelete is created
+450cf30 change 3 in file1 and decorate
+fa0dfd7 '.gitignore file is craeted and....'
+7033886 change2 in file1
+3949066 change in file
+2be1b4c New File1 is created
